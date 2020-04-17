@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: web-message
+  mvc:
+    throw-exception-if-no-handler-found: true
+  boot:
+    admin:
+      client:
+        url: ${spring-boot-admin-url}
+        instance:
+          prefer-ip: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  servlet:
+    multipart:
+      # 单文件最大
+      max-file-size: 500MB
+      # 一次上传最大
+      max-request-size: 500MB
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    service-url:
+      defaultZone: ${eureka-defaultZone}
+
+
+logging:
+  level:
+    root: info
+    org.springframework: warn
+
+swagger:
+  title: "cloud web rest API"
+  description: "cloud web API"
+  version: "v1.0.0"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  health:
+    redis:
+      enabled: false
+
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
