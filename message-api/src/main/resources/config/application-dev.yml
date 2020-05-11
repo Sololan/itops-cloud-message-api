@@ -30,8 +30,8 @@ logback:
   logDir: logs
 
 aliyun:
-  accessKeyId: LTAI4FcxiecqNUV2YNa9fasB
-  accessSecret: arxnCjwvWNZU8Cax8Qdz3jKnjsKf3p
+  accessKeyId: xxx
+  accessSecret: xxx
   sms:
     openTemplate: "SMS_185841061"
     closeTemplate: "SMS_185811043"
@@ -48,6 +48,6 @@ email:
 
 # 微信接口
 weChat:
-  appId: wx3a142027099d5340
+  appId: xxx
   # 重置开发者密码后, 要重新配置此参数
-  appSecret: d59af9cd385ec87cae835ff8f7db9bf6
+  appSecret: xxx
